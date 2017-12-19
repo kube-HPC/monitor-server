@@ -1,0 +1,19 @@
+{
+  "name": "simulator-server",
+  "version": "1.0.0",
+  "description": "webhook and websocket tunneling for simulator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "maty zisserman",
+  "license": "MIT",
+  "dependencies": {
+    "@hkube/etcd": "^2.1.51",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "node-etcd": "^5.1.0",
+    "socket.io": "^2.0.4"
+  }
+}
