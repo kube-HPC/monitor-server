@@ -6,8 +6,8 @@ const app = require('express')();
 const http = require('http')
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const { incoming, outgoing } = require('./consts');
-const etcdApi = require('./etcd-data');
+const { incoming, outgoing } = require('./lib/consts');
+const etcdApi = require('./lib/etcd-data');
 server.listen(3002);
 
 
