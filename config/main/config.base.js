@@ -5,7 +5,7 @@ var config = module.exports = {};
 config.serviceName = package.name;
 
 config.rest = {
-    port: process.env.SIMULATOR_SERVER_REST_PORT || 3002,
+    port: process.env.SIMULATOR_SERVER_REST_PORT || 30010,
 };
 const useCluster = process.env.REDIS_CLUSTER_SERVICE_HOST ? true : false;
 config.redis = {
@@ -15,6 +15,6 @@ config.redis = {
 };
 config.etcd = {
     protocol: 'http',
-    host: process.env.ETCD_CLIENT_SERVICE_HOST || 'localhost2',
+    host: process.env.ETCD_CLIENT_SERVICE_HOST || 'localhost',
     port: process.env.ETCD_CLIENT_SERVICE_PORT || 4001
 };
