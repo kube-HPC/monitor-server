@@ -7,11 +7,12 @@ config.serviceName = package.name;
 config.rest = {
     port: process.env.SIMULATOR_SERVER_REST_PORT || 30010,
 };
-const useCluster = process.env.REDIS_CLUSTER_SERVICE_HOST ? true : false;
+const useSentinel = !!process.env.REDIS_SENTINEL_SERVICE_HOST;
+
 config.redis = {
-    host: useCluster ? process.env.REDIS_CLUSTER_SERVICE_HOST : process.env.REDIS_SERVICE_HOST || 'localhost',
-    port: useCluster ? process.env.REDIS_CLUSTER_SERVICE_PORT : process.env.REDIS_SERVICE_PORT || 6379,
-    cluster: useCluster
+    host: useSentinel ? process.env.REDIS_SENTINEL_SERVICE_HOST : process.env.REDIS_SERVICE_HOST || 'localhost',
+    port: useSentinel ? process.env.REDIS_SENTINEL_SERVICE_PORT : process.env.REDIS_SERVICE_PORT || 6379,
+    sentinel: useSentinel,
 };
 config.etcd = {
     protocol: 'http',
