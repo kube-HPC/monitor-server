@@ -1,13 +1,10 @@
 
-process.env.NODE_PATH = __dirname;
-require('module').Module._initPaths();
-
 const configIt = require('@hkube/config');
 const Logger = require('@hkube/logger');
 const VerbosityPlugin = require('@hkube/logger').VerbosityPlugin;
 let log;
 const serverInit = require('./lib/server');
-const etcdApi=require('./lib/etcd-data');
+const etcdApi = require('./lib/etcd-data');
 
 class Bootstrap {
     async init() {
@@ -54,7 +51,7 @@ class Bootstrap {
             process.exit(1);
         });
         process.on('unhandledRejection', (error) => {
-            log.error('unhandledRejection: ' + (error.message||error), { component: 'main' }, error);
+            log.error('unhandledRejection: ' + (error.message || error), { component: 'main' }, error);
         });
         process.on('uncaughtException', (error) => {
             log.error('uncaughtException: ' + error.message, { component: 'main' }, error);
