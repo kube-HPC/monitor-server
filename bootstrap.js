@@ -1,23 +1,23 @@
 
 const configIt = require('@hkube/config');
+const { main, logger } = configIt.load();
 const Logger = require('@hkube/logger');
 const VerbosityPlugin = require('@hkube/logger').VerbosityPlugin;
-let log;
+const log = new Logger(main.serviceName, logger);
 const serverInit = require('./lib/server');
 const etcdApi = require('./lib/etcd-data');
-
+const redisAdapter =require('./lib/redis-storage-adapter')
 class Bootstrap {
     async init() {
         try {
-            const { main, logger } = configIt.load();
+          
             this._handleErrors();
 
-            log = new Logger(main.serviceName, logger);
             log.plugins.use(new VerbosityPlugin(main.redis));
             log.info('running application in ' + configIt.env() + ' environment', { component: 'main' });
-
             await etcdApi.init(main);
             await serverInit(main);
+            await redisAdapter.init(main);
             return main;
         }
         catch (error) {
