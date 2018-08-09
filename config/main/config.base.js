@@ -11,6 +11,12 @@ config.apiServer = {
     base_path:'api/v1'
 };
 
+config.debugUrl={
+prefix:`hkube/debug`,
+suffix: `socket.io`
+
+}    
+
 config.rest = {
     port: process.env.SIMULATOR_SERVER_REST_PORT || 30010,
 };
