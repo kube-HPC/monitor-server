@@ -16,6 +16,7 @@
     "@hkube/etcd": "^4.0.21",
     "@hkube/logger": "^1.0.12",
     "@hkube/redis-utils": "^1.0.3",
+    "await-delay": "^1.0.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
