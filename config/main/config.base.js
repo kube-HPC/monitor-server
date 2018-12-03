@@ -4,18 +4,24 @@ var config = module.exports = {};
 
 config.serviceName = package.name;
 
+config.jaeger = {
+    protocol: 'http',
+    host: process.env.JAEGER_JAEGER_QUERY_SERVICE_HOST || '40.69.222.75',
+    port: process.env.JAEGER_JAEGER_QUERY_SERVICE_PORT || 80
+}
+
 config.apiServer = {
     protocol: 'http',
     host: process.env.API_SERVER_SERVICE_HOST || 'localhost',
     port: process.env.API_SERVER_SERVICE_PORT || 3000,
-    base_path:'api/v1'
+    base_path: 'api/v1'
 };
 
-config.debugUrl={
-prefix:`hkube/debug`,
-suffix: `socket.io`
+config.debugUrl = {
+    prefix: `hkube/debug`,
+    suffix: `socket.io`
 
-}    
+}
 
 config.rest = {
     port: process.env.SIMULATOR_SERVER_REST_PORT || 30010,
