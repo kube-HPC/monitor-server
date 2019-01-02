@@ -9,7 +9,10 @@ config.jaeger = {
     host: process.env.JAEGER_JAEGER_QUERY_SERVICE_HOST || '40.69.222.75',
     port: process.env.JAEGER_JAEGER_QUERY_SERVICE_PORT || 80
 }
-
+config.kubernetes = {
+    isLocal: !!process.env.KUBERNETES_SERVICE_HOST,
+    namespace: process.env.NAMESPACE || 'default'
+}
 config.apiServer = {
     protocol: 'http',
     host: process.env.API_SERVER_SERVICE_HOST || 'localhost',

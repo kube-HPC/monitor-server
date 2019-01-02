@@ -5,7 +5,9 @@ const Logger = require('@hkube/logger');
 const log = new Logger(main.serviceName, logger);
 const serverInit = require('./lib/server');
 const etcdApi = require('./lib/etcd-data');
-const redisAdapter = require('./lib/redis-storage-adapter')
+const redisAdapter = require('./lib/redis-storage-adapter');
+const kubernetesLogs =  require('./lib/kubernetes/logs');
+
 
 class Bootstrap {
     async init() {
@@ -13,6 +15,7 @@ class Bootstrap {
             this._handleErrors();
             log.info('running application in ' + configIt.env() + ' environment', { component: 'main' });
             await etcdApi.init(main);
+            await kubernetesLogs.init(main);
             await serverInit(main);
             await redisAdapter.init(main);
             return main;
