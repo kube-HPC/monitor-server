@@ -2,11 +2,12 @@
 const configIt = require('@hkube/config');
 const { main, logger } = configIt.load();
 const Logger = require('@hkube/logger');
+const monitor = require('@hkube/redis-utils').Monitor;
 const log = new Logger(main.serviceName, logger);
 const serverInit = require('./lib/server');
 const etcdApi = require('./lib/etcd-data');
 const redisAdapter = require('./lib/redis-storage-adapter');
-const kubernetesLogs =  require('./lib/kubernetes/logs');
+const kubernetesLogs = require('./lib/kubernetes/logs');
 
 
 class Bootstrap {
@@ -15,6 +16,13 @@ class Bootstrap {
             this._handleErrors();
             log.info('running application in ' + configIt.env() + ' environment', { component: 'main' });
             await etcdApi.init(main);
+            monitor.on('ready', (data) => {
+                log.info((data.message).green, { component: 'main' });
+            });
+            monitor.on('close', (data) => {
+                log.error(data.error.message, { component: 'main' });
+            });
+            await monitor.check(main.redis);
             await kubernetesLogs.init(main);
             await serverInit(main);
             await redisAdapter.init(main);
