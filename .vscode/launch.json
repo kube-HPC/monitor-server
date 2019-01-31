@@ -8,7 +8,9 @@
             "type": "node",
             "request": "attach",
             "name": "Attach",
-            "port": 9229
+            "port": 9229,
+            "remoteRoot": "/hkube/monitor-server",
+            "restart": true
         },
         {
             "type": "node",
@@ -42,19 +44,19 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            // "env": {
-            //     "REDIS_SENTINEL_SERVICE_PORT": "26379",
-            //     "REDIS_SENTINEL_SERVICE_HOST": "10.233.26.4",
-            //     "ETCD_CLIENT_SERVICE_HOST": "10.233.44.206",
-            //     "ETCD_CLIENT_SERVICE_PORT": "2379",
-            //     "API_SERVER_SERVICE_PORT":"3000",
-            //     "API_SERVER_SERVICE_HOST":"10.233.58.247"
+            "env": {
+                "REDIS_SENTINEL_SERVICE_PORT": "26379",
+                "REDIS_SENTINEL_SERVICE_HOST": "10.233.26.4",
+                "ETCD_CLIENT_SERVICE_HOST": "10.233.44.206",
+                "ETCD_CLIENT_SERVICE_PORT": "2379",
+                "API_SERVER_SERVICE_PORT":"3000",
+                "API_SERVER_SERVICE_HOST":"10.233.58.247"
 
-            //     // "REDIS_SENTINEL_SERVICE_HOST": "10.233.37.51",
-            //     // "REDIS_SENTINEL_SERVICE_PORT": "26379",
-            //     // "ETCD_CLIENT_SERVICE_HOST": "10.233.0.208",
-            //     // "ETCD_CLIENT_SERVICE_PORT": "2379",
-            // }
+                // "REDIS_SENTINEL_SERVICE_HOST": "10.233.37.51",
+                // "REDIS_SENTINEL_SERVICE_PORT": "26379",
+                // "ETCD_CLIENT_SERVICE_HOST": "10.233.0.208",
+                // "ETCD_CLIENT_SERVICE_PORT": "2379",
+            }
         }
     ]
 }
