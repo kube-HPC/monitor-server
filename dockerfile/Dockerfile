@@ -6,4 +6,4 @@ RUN mkdir /hkube
 COPY . /hkube/monitor-server
 RUN cd /hkube/monitor-server
 WORKDIR /hkube/monitor-server
-CMD ["nodemon", "app.js"]
+CMD ["node", "app.js"]
