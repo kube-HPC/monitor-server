@@ -29,6 +29,8 @@ config.debugUrl = {
     suffix: `socket.io`
 }
 
+config.clusterName = process.env.CLUSTER_NAME || 'local';
+
 config.rest = {
     port: process.env.SIMULATOR_SERVER_REST_PORT || 30010,
 };
