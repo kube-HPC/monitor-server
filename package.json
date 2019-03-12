@@ -1,6 +1,6 @@
 {
   "name": "simulator-server",
-  "version": "1.1.58",
+  "version": "1.1.59",
   "description": "webhook and websocket tunneling for simulator",
   "main": "app.js",
   "scripts": {
