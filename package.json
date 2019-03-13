@@ -1,5 +1,5 @@
 {
-  "name": "simulator-server",
+  "name": "monitor-server",
   "version": "1.1.60",
   "description": "webhook and websocket tunneling for simulator",
   "main": "app.js",
@@ -22,6 +22,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "express-async-errors": "^3.1.1",
     "kubernetes-client": "^6.6.1",
     "lodash.isequal": "^4.5.0",
     "multer": "^1.4.1",
