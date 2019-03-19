@@ -1,6 +1,6 @@
 {
   "name": "monitor-server",
-  "version": "1.1.65",
+  "version": "1.1.66",
   "description": "webhook and websocket tunneling for simulator",
   "main": "app.js",
   "scripts": {
