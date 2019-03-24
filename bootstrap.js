@@ -1,14 +1,14 @@
 
 const configIt = require('@hkube/config');
-const { main, logger } = configIt.load();
 const Logger = require('@hkube/logger');
 const monitor = require('@hkube/redis-utils').Monitor;
+const storageManager = require('@hkube/storage-manager');
+const { main, logger } = configIt.load();
 const log = new Logger(main.serviceName, logger);
 const serverInit = require('./lib/server');
 const etcdApi = require('./lib/etcd-data');
 const redisAdapter = require('./lib/redis-storage-adapter');
 const kubernetesLogs = require('./lib/kubernetes/logs');
-
 
 class Bootstrap {
     async init() {
@@ -26,6 +26,7 @@ class Bootstrap {
             await kubernetesLogs.init(main);
             await serverInit(main);
             await redisAdapter.init(main);
+            await storageManager.init(main, false);
             return main;
         }
         catch (error) {

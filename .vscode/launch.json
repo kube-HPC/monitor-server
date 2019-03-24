@@ -1,50 +1,18 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "type": "node",
-            "request": "attach",
-            "name": "Attach",
-            "port": 9229,
-            "remoteRoot": "/hkube/monitor-server",
-            "restart": true
-        },
-        {
-            "type": "node",
             "request": "launch",
-            "name": "Remote",
-            "program": "${workspaceRoot}/app.js",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js",
             "outputCapture": "std",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "env": {
-                "REDIS_SENTINEL_SERVICE_PORT": "26379",
-                "REDIS_SENTINEL_SERVICE_HOST": "10.233.26.4",
-                "ETCD_CLIENT_SERVICE_HOST": "10.233.44.206",
-                "ETCD_CLIENT_SERVICE_PORT": "2379",
-                "API_SERVER_SERVICE_PORT":"3000",
-                "API_SERVER_SERVICE_HOST":"10.233.58.247"
-
-                // "REDIS_SENTINEL_SERVICE_HOST": "10.233.37.51",
-                // "REDIS_SENTINEL_SERVICE_PORT": "26379",
-                // "ETCD_CLIENT_SERVICE_HOST": "10.233.0.208",
-                // "ETCD_CLIENT_SERVICE_PORT": "2379",
-            }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Local",
-            "program": "${workspaceRoot}/app.js",
-            "outputCapture": "std",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-        //     "env": {
+     
+         //   "envFile": "${env:HOME}/dev/hkube/.env"
+         //     "env": {
         //         "REDIS_SENTINEL_SERVICE_PORT": "26379",
         //         "REDIS_SENTINEL_SERVICE_HOST": "10.233.26.4",
         //         "ETCD_CLIENT_SERVICE_HOST": "10.233.44.206",
@@ -56,7 +24,8 @@
         //         // "REDIS_SENTINEL_SERVICE_PORT": "26379",
         //         // "ETCD_CLIENT_SERVICE_HOST": "10.233.0.208",
         //         // "ETCD_CLIENT_SERVICE_PORT": "2379",
-        //     }
-        // }
+        //     }  
+        // }  
+        }
     ]
 }
