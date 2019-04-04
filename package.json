@@ -16,7 +16,7 @@
     "@hkube/etcd": "^4.0.32",
     "@hkube/logger": "^1.0.15",
     "@hkube/redis-utils": "^1.0.3",
-    "@hkube/storage-manager": "^1.0.43",
+    "@hkube/storage-manager": "^1.0.47",
     "await-delay": "^1.0.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
@@ -28,7 +28,7 @@
     "lodash.isequal": "^4.5.0",
     "multer": "^1.4.1",
     "request": "^2.87.0",
-    "requestretry": "^2.0.2",
+    "requestretry": "^4.0.0",
     "socket.io": "^2.1.1"
   }
 }
