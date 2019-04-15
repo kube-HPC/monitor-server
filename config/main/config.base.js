@@ -14,7 +14,8 @@ config.jaeger = {
 
 config.kubernetes = {
     isLocal: !!process.env.KUBERNETES_SERVICE_HOST,
-    namespace: process.env.NAMESPACE || 'default'
+    namespace: process.env.NAMESPACE || 'default',
+    version: '1.9'
 };
 
 config.apiServer = {
