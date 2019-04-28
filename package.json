@@ -14,7 +14,7 @@
   "dependencies": {
     "@hkube/config": "^2.0.7",
     "@hkube/etcd": "^4.0.32",
-    "@hkube/kubernetes-client": "^1.0.8",
+    "@hkube/kubernetes-client": "^1.0.12",
     "@hkube/logger": "^1.0.15",
     "@hkube/redis-utils": "^1.0.3",
     "@hkube/storage-manager": "^1.0.49",
