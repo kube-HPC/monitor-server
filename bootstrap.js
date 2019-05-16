@@ -30,19 +30,13 @@ class Bootstrap {
             return main;
         }
         catch (error) {
-            this._onInitFailed(new Error(`unable to start application. ${error.message}`));
+            this._onInitFailed(error);
         }
     }
 
     _onInitFailed(error) {
-        if (log) {
-            log.error(error.message, { component: 'main' }, error);
-            log.error(error);
-        }
-        else {
-            console.error(error.message);
-            console.error(error);
-        }
+        log.error(error.message, { component: 'main' }, error);
+        log.error(error);
         process.exit(1);
     }
 
