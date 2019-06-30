@@ -6,6 +6,11 @@ const useSentinel = !!process.env.REDIS_SENTINEL_SERVICE_HOST;
 config.defaultStorage = process.env.DEFAULT_STORAGE || 's3';
 config.serviceName = package.name;
 
+config.logsView = {
+    format: process.env.LOGS_VIEW_FORMAT || 'raw',
+    container: process.env.LOGS_VIEW_CONTAINER || 'algorunner'
+};
+
 config.jaeger = {
     protocol: 'http',
     host: process.env.JAEGER_JAEGER_QUERY_SERVICE_HOST || '40.69.222.75',
