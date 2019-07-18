@@ -3,10 +3,13 @@ const configIt = require('@hkube/config');
 const Logger = require('@hkube/logger');
 const monitor = require('@hkube/redis-utils').Monitor;
 const storageManager = require('@hkube/storage-manager');
+const { rest: healthcheck } = require('@hkube/healthchecks');
 const { main, logger } = configIt.load();
 const log = new Logger(main.serviceName, logger);
 const serverInit = require('./lib/server');
 const etcdApi = require('./lib/etcd-data');
+const resultGather = require('./lib/result-gather');
+const nodeStatisticsData = require('./lib/node-statistics/statistics');
 const redisAdapter = require('./lib/redis-storage-adapter');
 const kubernetesLogs = require('./lib/kubernetes/logs');
 
@@ -16,6 +19,8 @@ class Bootstrap {
             this._handleErrors();
             log.info('running application in ' + configIt.env() + ' environment', { component: 'main' });
             await etcdApi.init(main);
+            resultGather.init(main);
+            nodeStatisticsData.init(main);
             monitor.on('ready', (data) => {
                 log.info((data.message).green, { component: 'main' });
             });
@@ -27,6 +32,11 @@ class Bootstrap {
             await serverInit(main);
             await redisAdapter.init(main);
             await storageManager.init(main, false);
+            await healthcheck.init({ port: main.healthchecks.port });
+            healthcheck.start(main.healthchecks.path, () => {
+                return resultGather.checkHealth(main.healthchecks.maxDiff) && 
+                       nodeStatisticsData.checkHealth(main.healthchecks.maxDiff)
+            }, 'health');
             return main;
         }
         catch (error) {

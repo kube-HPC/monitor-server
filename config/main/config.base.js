@@ -1,5 +1,6 @@
 
 const package = require(process.cwd() + '/package.json');
+const formatter = require('../../lib/utils/formatters');
 const config = module.exports = {};
 const useSentinel = !!process.env.REDIS_SENTINEL_SERVICE_HOST;
 
@@ -82,3 +83,10 @@ config.storageAdapters = {
         moduleName: process.env.STORAGE_MODULE || '@hkube/fs-adapter'
     }
 };
+
+config.healthchecks = {
+    path: process.env.HEALTHCHECK_PATH || '/healthz',
+    port: process.env.HEALTHCHECK_PORT || '5000',
+    maxDiff: process.env.HEALTHCHECK_MAX_DIFF || '30000',
+    logExternalRequests: formatter.parseBool(process.env.LOG_EXTERNAL_REQUESTS, true)
+}
