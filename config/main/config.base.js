@@ -14,7 +14,7 @@ config.logsView = {
 
 config.jaeger = {
     protocol: 'http',
-    host: process.env.JAEGER_JAEGER_QUERY_SERVICE_HOST || process.env.JAEGER_QUERY_SERVICE_HOST || '40.69.222.75',
+    host: process.env.JAEGER_JAEGER_QUERY_SERVICE_HOST || process.env.JAEGER_QUERY_SERVICE_HOST || '127.0.0.1',
     port: process.env.JAEGER_JAEGER_QUERY_SERVICE_PORT || process.env.JAEGER_QUERY_SERVICE_PORT || 80
 };
 
