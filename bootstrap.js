@@ -34,8 +34,8 @@ class Bootstrap {
             await storageManager.init(main, false);
             await healthcheck.init({ port: main.healthchecks.port });
             healthcheck.start(main.healthchecks.path, () => {
-                return resultGather.checkHealth(main.healthchecks.maxDiff) && 
-                       nodeStatisticsData.checkHealth(main.healthchecks.maxDiff)
+                return resultGather.checkHealth(main.healthchecks.maxDiff) &&
+                    nodeStatisticsData.checkHealth(main.healthchecks.maxDiff)
             }, 'health');
             return main;
         }
@@ -46,7 +46,6 @@ class Bootstrap {
 
     _onInitFailed(error) {
         log.error(error.message, { component: 'main' }, error);
-        log.error(error);
         process.exit(1);
     }
 
