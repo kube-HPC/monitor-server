@@ -13,6 +13,12 @@ config.logsView = {
     source: process.env.LOGS_VIEW_SOURCE || 'k8s'
 };
 
+config.clusterName = process.env.CLUSTER_NAME || 'local';
+
+config.elasticSearch = {
+    format: process.env.ELASTICSEARCH_SERVICE_URL || `http://elasticsearch.kube-system.svc.${config.clusterName}`
+};
+
 config.jaeger = {
     protocol: 'http',
     host: process.env.JAEGER_JAEGER_QUERY_SERVICE_HOST || process.env.JAEGER_QUERY_SERVICE_HOST || '127.0.0.1',
@@ -36,8 +42,6 @@ config.debugUrl = {
     prefix: `hkube/debug`,
     suffix: `socket.io`
 }
-
-config.clusterName = process.env.CLUSTER_NAME || 'local';
 
 config.rest = {
     port: process.env.SIMULATOR_SERVER_REST_PORT || 30010,
