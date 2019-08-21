@@ -8,8 +8,9 @@ config.defaultStorage = process.env.DEFAULT_STORAGE || 's3';
 config.serviceName = package.name;
 
 config.logsView = {
-    format: process.env.LOGS_VIEW_FORMAT || 'raw',
-    container: process.env.LOGS_VIEW_CONTAINER || 'algorunner'
+    format: process.env.LOGS_VIEW_FORMAT || 'json',
+    container: process.env.LOGS_VIEW_CONTAINER || 'worker',
+    source: process.env.LOGS_VIEW_SOURCE || 'k8s'
 };
 
 config.jaeger = {

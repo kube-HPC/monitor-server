@@ -11,7 +11,7 @@ const etcdApi = require('./lib/etcd-data');
 const resultGather = require('./lib/result-gather');
 const nodeStatisticsData = require('./lib/node-statistics/statistics');
 const redisAdapter = require('./lib/redis-storage-adapter');
-const kubernetesLogs = require('./lib/kubernetes/logs');
+const logs = require('./lib/logs/logs');
 
 class Bootstrap {
     async init() {
@@ -28,7 +28,7 @@ class Bootstrap {
                 log.error(data.error.message, { component: 'main' });
             });
             await monitor.check(main.redis);
-            await kubernetesLogs.init(main);
+            await logs.init(main);
             await serverInit(main);
             await redisAdapter.init(main);
             await storageManager.init(main, false);
