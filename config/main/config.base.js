@@ -16,7 +16,7 @@ config.logsView = {
 config.clusterName = process.env.CLUSTER_NAME || 'local';
 
 config.elasticSearch = {
-    format: process.env.ELASTICSEARCH_SERVICE_URL || `http://elasticsearch.kube-system.svc.${config.clusterName}`
+    url: process.env.ELASTICSEARCH_SERVICE_URL || `http://elasticsearch.kube-system.svc.${config.clusterName}`
 };
 
 config.jaeger = {
