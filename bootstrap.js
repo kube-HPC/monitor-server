@@ -11,7 +11,7 @@ const etcdApi = require('./lib/etcd-data');
 const resultGather = require('./lib/result-gather');
 const nodeStatisticsData = require('./lib/node-statistics/statistics');
 const redisAdapter = require('./lib/redis-storage-adapter');
-const logs = require('./lib/logs/logs');
+const logs = require('./lib/task-logs/logs');
 
 class Bootstrap {
     async init() {
