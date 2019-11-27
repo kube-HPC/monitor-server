@@ -6,11 +6,11 @@ const storageManager = require('@hkube/storage-manager');
 const { rest: healthcheck } = require('@hkube/healthchecks');
 const { main, logger } = configIt.load();
 const log = new Logger(main.serviceName, logger);
-const serverInit = require('./lib/server');
-const etcdApi = require('./lib/etcd-data');
-const resultGather = require('./lib/result-gather');
+const serverInit = require('./lib/service/server');
+const etcdApi = require('./lib/service/etcd-data');
+const resultGather = require('./lib/service/result-gather');
 const nodeStatisticsData = require('./lib/node-statistics/statistics');
-const redisAdapter = require('./lib/redis-storage-adapter');
+const redisAdapter = require('./lib/service/redis-storage-adapter');
 const logs = require('./lib/task-logs/logs');
 
 class Bootstrap {
