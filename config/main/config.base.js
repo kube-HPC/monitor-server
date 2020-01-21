@@ -63,11 +63,13 @@ config.etcd = {
 config.s3 = {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID || 'AKIAIOSFODNN7EXAMPLE',
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY',
-    endpoint: process.env.S3_ENDPOINT_URL || 'http://127.0.0.1:9000'
+    endpoint: process.env.S3_ENDPOINT_URL || 'http://127.0.0.1:9000',
+    binary: formatter.parseBool(process.env.STORAGE_BINARY, false)
 };
 
 config.fs = {
-    baseDirectory: process.env.BASE_FS_ADAPTER_DIRECTORY || '/var/tmp/fs/storage'
+    baseDirectory: process.env.BASE_FS_ADAPTER_DIRECTORY || '/var/tmp/fs/storage',
+    binary: formatter.parseBool(process.env.STORAGE_BINARY, false)
 };
 
 config.storageAdapters = {
@@ -93,5 +95,5 @@ config.healthchecks = {
     path: process.env.HEALTHCHECK_PATH || '/healthz',
     port: process.env.HEALTHCHECK_PORT || '5000',
     maxDiff: process.env.HEALTHCHECK_MAX_DIFF || '30000',
-    logExternalRequests: formatter.parseBool(process.env.LOG_EXTERNAL_REQUESTS, true)
+    logExternalRequests: formatter.parseBool(process.env.LOG_EXTERNAL_REQUESTS, false)
 }
