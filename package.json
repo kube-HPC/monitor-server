@@ -1,6 +1,6 @@
 {
   "name": "monitor-server",
-  "version": "1.2.16",
+  "version": "1.2.19",
   "description": "webhook and websocket tunneling for simulator",
   "main": "app.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "@hkube/kubernetes-client": "^1.0.26",
     "@hkube/logger": "^1.0.24",
     "@hkube/redis-utils": "^1.0.3",
-    "@hkube/storage-manager": "^1.0.60",
+    "@hkube/storage-manager": "^1.0.64",
     "@hkube/units-converter": "^1.0.14",
     "await-delay": "^1.0.0",
     "body-parser": "^1.19.0",
