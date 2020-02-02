@@ -20,7 +20,7 @@
     "@hkube/kubernetes-client": "^1.0.26",
     "@hkube/logger": "^1.0.24",
     "@hkube/redis-utils": "^1.0.3",
-    "@hkube/storage-manager": "^1.0.64",
+    "@hkube/storage-manager": "^1.0.68",
     "@hkube/units-converter": "^1.0.14",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
