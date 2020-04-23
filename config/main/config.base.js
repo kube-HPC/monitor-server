@@ -70,6 +70,7 @@ config.fs = {
 config.storageAdapters = {
     s3: {
         connection: config.s3,
+        encoding: process.env.STORAGE_ENCODING || 'bson',
         moduleName: process.env.STORAGE_MODULE || '@hkube/s3-adapter'
     },
     etcd: {
@@ -82,6 +83,7 @@ config.storageAdapters = {
     },
     fs: {
         connection: config.fs,
+        encoding: process.env.STORAGE_ENCODING || 'bson',
         moduleName: process.env.STORAGE_MODULE || '@hkube/fs-adapter'
     }
 };
