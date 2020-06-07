@@ -15,26 +15,26 @@
   "dependencies": {
     "@hkube/config": "^2.0.7",
     "@hkube/elastic-client": "^1.0.0",
-    "@hkube/etcd": "^5.0.19",
+    "@hkube/etcd": "^5.0.21",
     "@hkube/healthchecks": "^1.0.0",
-    "@hkube/kubernetes-client": "^1.0.26",
-    "@hkube/logger": "^1.0.24",
+    "@hkube/kubernetes-client": "^1.0.30",
+    "@hkube/logger": "^1.0.25",
     "@hkube/redis-utils": "^1.0.3",
-    "@hkube/storage-manager": "^1.0.68",
-    "@hkube/units-converter": "^1.0.14",
+    "@hkube/storage-manager": "^2.0.6",
+    "@hkube/units-converter": "^1.0.15",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "express": "^4.17.0",
+    "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
-    "http-proxy-middleware": "^0.20.0",
-    "request": "^2.88.0",
-    "socket.io": "^2.2.0"
+    "http-proxy-middleware": "^1.0.3",
+    "request": "^2.88.2",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-chai-friendly": "^0.5.0",
-    "eslint-plugin-import": "^2.19.1"
+    "eslint-plugin-import": "^2.20.2"
   }
 }
