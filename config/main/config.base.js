@@ -1,6 +1,6 @@
 
 const package = require(process.cwd() + '/package.json');
-const formatter = require('../../lib/utils/formatters');
+const formatter = require(process.cwd() + '/lib/utils/formatters');
 const config = module.exports = {};
 const useSentinel = !!process.env.REDIS_SENTINEL_SERVICE_HOST;
 
@@ -56,6 +56,19 @@ config.etcd = {
     host: process.env.ETCD_CLIENT_SERVICE_HOST || '127.0.0.1',
     port: process.env.ETCD_CLIENT_SERVICE_PORT || 4001,
     serviceName: config.serviceName
+};
+
+config.db = {
+    provider: 'mongo',
+    mongo: {
+        auth: {
+            user: process.env.MONGODB_SERVICE_USER_NAME,
+            password: process.env.MONGODB_SERVICE_PASSWORD,
+        },
+        host: process.env.MONGODB_SERVICE_HOST || 'localhost',
+        port: formatter.parseInt(process.env.MONGODB_SERVICE_PORT, 27017),
+        dbName: process.env.MONGODB_DB_NAME || 'hkube',
+    }
 };
 
 config.s3 = {
