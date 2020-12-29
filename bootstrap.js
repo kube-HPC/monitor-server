@@ -19,7 +19,6 @@ class Bootstrap {
             this._handleErrors();
             log.info('running application in ' + configIt.env() + ' environment', { component: 'main' });
             await etcdApi.init(main);
-            resultGather.init(main);
             nodeStatisticsData.init(main);
             monitor.on('ready', (data) => {
                 log.info((data.message).green, { component: 'main' });
