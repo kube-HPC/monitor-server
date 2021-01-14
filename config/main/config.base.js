@@ -46,8 +46,8 @@ config.rest = {
 };
 
 config.datasourceService = {
-    host: process.env.DATASOURCE_SERVICE_REST_HOST || 'localhost',
-    port: process.env.DATASOURCE_SERVICE_REST_PORT || 3005,
+    host: process.env.DATASOURCES_SERVICE_SERVICE_HOST || 'localhost',
+    port: process.env.DATASOURCES_SERVICE_SERVICE_PORT || 3005,
     protocol: 'http',
 };
 
