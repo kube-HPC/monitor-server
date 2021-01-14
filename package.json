@@ -1,6 +1,6 @@
 {
   "name": "monitor-server",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "webhook and websocket tunneling for simulator",
   "main": "app.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@hkube/config": "^2.0.11",
-    "@hkube/db": "^1.0.18",
+    "@hkube/db": "^1.0.19",
     "@hkube/elastic-client": "^1.0.0",
     "@hkube/etcd": "^5.1.2",
     "@hkube/healthchecks": "^1.0.1",
@@ -29,14 +29,14 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
-    "http-proxy-middleware": "^1.0.3",
+    "http-proxy-middleware": "^1.0.6",
     "request": "^2.88.2",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-chai-friendly": "^0.5.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.22.1"
   }
 }
