@@ -13,30 +13,30 @@
   "author": "Hkube",
   "license": "MIT",
   "dependencies": {
-    "@hkube/config": "^2.0.10",
-    "@hkube/db": "^1.0.16",
+    "@hkube/config": "^2.0.11",
+    "@hkube/db": "^1.0.19",
     "@hkube/elastic-client": "^1.0.0",
     "@hkube/etcd": "^5.1.2",
-    "@hkube/healthchecks": "^1.0.0",
-    "@hkube/kubernetes-client": "^1.0.30",
-    "@hkube/logger": "^1.0.25",
+    "@hkube/healthchecks": "^1.0.1",
+    "@hkube/kubernetes-client": "^1.0.33",
+    "@hkube/logger": "^1.0.27",
     "@hkube/redis-utils": "^1.0.3",
-    "@hkube/storage-manager": "^2.0.6",
-    "@hkube/units-converter": "^1.0.15",
+    "@hkube/storage-manager": "^2.0.32",
+    "@hkube/units-converter": "^1.0.16",
     "body-parser": "^1.19.0",
     "check-disk-space": "^2.1.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
-    "http-proxy-middleware": "^1.0.3",
+    "http-proxy-middleware": "^1.0.6",
     "request": "^2.88.2",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-chai-friendly": "^0.5.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.22.1"
   }
 }

@@ -45,6 +45,12 @@ config.rest = {
     port: process.env.SIMULATOR_SERVER_REST_PORT || 30010,
 };
 
+config.datasourceService = {
+    host: process.env.DATASOURCES_SERVICE_SERVICE_HOST || 'localhost',
+    port: process.env.DATASOURCES_SERVICE_SERVICE_PORT || 3005,
+    protocol: 'http',
+};
+
 config.redis = {
     host: useSentinel ? process.env.REDIS_SENTINEL_SERVICE_HOST : process.env.REDIS_SERVICE_HOST || 'localhost',
     port: useSentinel ? process.env.REDIS_SENTINEL_SERVICE_PORT : process.env.REDIS_SERVICE_PORT || 6379,
