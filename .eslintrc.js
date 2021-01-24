@@ -13,7 +13,9 @@ module.exports = {
         "ecmaVersion": 2018
     },
     "rules": {
-        "no-param-reassign": "error",
+        "no-restricted-syntax": "off",
+        "no-await-in-loop": "off",
+        "no-param-reassign": "off",
         "prefer-template": "error",
         "no-trailing-spaces": "error",
         "no-console": "error",
