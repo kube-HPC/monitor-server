@@ -6,7 +6,9 @@ const useSentinel = !!process.env.REDIS_SENTINEL_SERVICE_HOST;
 
 config.defaultStorage = process.env.DEFAULT_STORAGE || 's3';
 config.serviceName = package.name;
-
+config.sizes = {
+    maxFlowInputSize: formatter.parseInt(process.env.MAX_FLOW_INPUT_SIZE, 3000),
+}
 config.logsView = {
     format: process.env.LOGS_VIEW_FORMAT || 'json',
     container: process.env.LOGS_VIEW_CONTAINER || 'worker',
