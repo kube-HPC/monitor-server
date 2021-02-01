@@ -31,6 +31,7 @@ class Bootstrap {
             await serverInit(main);
             await redisAdapter.init(main);
             await storageManager.init(main, false);
+            await resultGather.init(main);
             await healthcheck.init({ port: main.healthchecks.port });
             healthcheck.start(main.healthchecks.path, () => {
                 return resultGather.checkHealth(main.healthchecks.maxDiff) &&
