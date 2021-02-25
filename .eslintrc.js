@@ -10,13 +10,15 @@ module.exports = {
     ],
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 2018
+        "ecmaVersion": 2020
     },
     "rules": {
-        "no-param-reassign": "error",
+        "no-param-reassign": "off",
         "prefer-template": "error",
         "no-trailing-spaces": "error",
         "no-console": "error",
+        "no-restricted-syntax": "off",
+        "no-await-in-loop": "off",
         "no-use-before-define": "warn",
         "object-curly-spacing": "error",
         "no-var": "error",
