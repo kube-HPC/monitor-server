@@ -1,7 +1,7 @@
 {
   "name": "monitor-server",
   "version": "2.1.2",
-  "description": "webhook and websocket tunneling for simulator",
+  "description": "proxy to api-server and websocket tunneling for dashboard",
   "main": "app.js",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js .",
