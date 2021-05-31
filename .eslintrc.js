@@ -25,7 +25,7 @@ module.exports = {
         "import/newline-after-import": "off",
         "max-len": ["error", 200],
         "brace-style": ["error", "stroustrup"],
-        "indent": ["warn", 4],
+        "indent": ["warn", 4, { "SwitchCase": 1 }],
         "comma-dangle": "off",
         "no-underscore-dangle": "off",
         "linebreake-style": "off",
