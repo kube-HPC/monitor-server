@@ -33,7 +33,7 @@
     "http-proxy-middleware": "^1.0.6",
     "lodash.orderby": "^4.6.0",
     "request": "^2.88.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
