@@ -8,6 +8,7 @@ const { main, logger } = configIt.load();
 const log = new Logger(main.serviceName, logger);
 const serverInit = require('./lib/service/server');
 const etcdApi = require('./lib/service/etcd-data');
+const graphHelper = require('./lib/service/graph-helper');
 const resultGather = require('./lib/service/result-gather');
 const nodeStatisticsData = require('./lib/node-statistics/statistics');
 const redisAdapter = require('./lib/service/redis-storage-adapter');
@@ -31,7 +32,7 @@ class Bootstrap {
             await serverInit(main);
             await redisAdapter.init(main);
             await storageManager.init(main, false);
-            await resultGather.init(main);
+            graphHelper.init(main);
             await healthcheck.init({ port: main.healthchecks.port });
             healthcheck.start(main.healthchecks.path, () => {
                 return resultGather.checkHealth(main.healthchecks.maxDiff) &&
