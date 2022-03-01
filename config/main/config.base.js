@@ -59,6 +59,13 @@ config.datasourceService = {
     protocol: 'http',
 };
 
+config.pipelineDriversQueue = {
+    host: process.env.PIPELINE_DRIVERS_QUEUE_SERVICE_HOST || 'localhost',
+    port: process.env.PIPELINE_DRIVERS_QUEUE_SERVICE_PORT || 7100,
+    protocol: 'http',
+};
+
+
 config.redis = {
     host: useSentinel ? process.env.REDIS_SENTINEL_SERVICE_HOST : process.env.REDIS_SERVICE_HOST || 'localhost',
     port: useSentinel ? process.env.REDIS_SENTINEL_SERVICE_PORT : process.env.REDIS_SERVICE_PORT || 6379,
