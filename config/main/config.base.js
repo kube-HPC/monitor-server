@@ -60,8 +60,8 @@ config.datasourceService = {
 };
 
 config.pipelineDriversQueue = {
-    host: process.env.PIPELINE_DRIVERS_QUEUE_SERVICE_HOST || 'localhost',
-    port: process.env.PIPELINE_DRIVERS_QUEUE_SERVICE_PORT || 7100,
+    host: process.env.PIPELINE_DRIVER_QUEUE_SERVICE_HOST || 'localhost',
+    port: process.env.PIPELINE_DRIVER_QUEUE_SERVICE_PORT || 7100,
     protocol: 'http',
 };
 
