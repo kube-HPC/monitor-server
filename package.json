@@ -1,6 +1,6 @@
 {
   "name": "monitor-server",
-  "version": "2.2.3",
+  "version": "2.4.1",
   "description": "proxy to api-server and websocket tunneling for dashboard",
   "main": "app.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "@hkube/redis-utils": "^1.0.3",
     "@hkube/storage-manager": "^2.0.34",
     "@hkube/units-converter": "^1.0.17",
+    "axios": "^0.26.1",
     "body-parser": "^1.19.0",
     "check-disk-space": "^2.1.0",
     "clone": "^2.1.2",
