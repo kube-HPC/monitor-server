@@ -22,7 +22,7 @@
     "@hkube/kubernetes-client": "^2.0.4",
     "@hkube/logger": "^2.0.2",
     "@hkube/redis-utils": "^1.0.3",
-    "@hkube/storage-manager": "^2.0.34",
+    "@hkube/storage-manager": "^2.1.1",
     "@hkube/units-converter": "^1.0.17",
     "axios": "^0.26.1",
     "body-parser": "^1.19.0",
