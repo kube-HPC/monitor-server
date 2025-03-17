@@ -1,6 +1,6 @@
 {
   "name": "monitor-server",
-  "version": "2.8.1",
+  "version": "2.9.0",
   "description": "proxy to api-server and websocket tunneling for dashboard",
   "main": "app.js",
   "scripts": {
